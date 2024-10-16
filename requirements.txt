@@ -1,0 +1,7 @@
+streamlit
+torch
+transformers
+os
+datasets
+sklearn
+openai
