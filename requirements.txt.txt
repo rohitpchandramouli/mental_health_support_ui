@@ -1,6 +1,6 @@
-streamlit==1.3.0
+streamlit
 torch
-transformers==4.10.0
+transformers
 os
 datasets
 sklearn
