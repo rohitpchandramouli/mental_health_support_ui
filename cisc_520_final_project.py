@@ -159,6 +159,3 @@ print(f"Epoch {epoch+1}/{epochs}, Training Loss: {avg_train_loss:.4f}")
 
 # Save the trained model
 torch.save(model.state_dict(), "bert_emotion_model.pth")
-
-from google.colab import files
-files.download("bert_emotion_model.pth")
