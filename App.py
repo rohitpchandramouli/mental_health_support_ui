@@ -5,8 +5,7 @@ import streamlit as st
 from transformers import BertTokenizer, BertForSequenceClassification, GPT2LMHeadModel, GPT2Tokenizer
 
 # Download model from Google Drive
-file_id = '1UadmEDMtYlhUhE26gRB-INBdGj0UIvHe'
-model_url = f"https://drive.google.com/uc?export=download&id={file_id}"
+model_url = "https://drive.google.com/file/d/1UadmEDMtYlhUhE26gRB-INBdGj0UIvHe/view?usp=sharing"
 response = requests.get(model_url)
 
 # Check if the download was successful
