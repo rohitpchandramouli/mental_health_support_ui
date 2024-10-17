@@ -5,11 +5,9 @@ import streamlit as st
 from transformers import BertTokenizer, BertForSequenceClassification, GPT2LMHeadModel, GPT2Tokenizer
 
 
-# Download the model file from SharePoint
-model_url = "https://myharrisburgu.sharepoint.com/:u:/s/CISC520/Ede5T-WYCsZLoL0D_EGdnAwBv3_MooU8C_3DNO0C0VdjEg?e=vtCK3B"
+file_id = '1UadmEDMtYlhUhE26gRB-INBdGj0UIvHe'
+model_url = f"https://drive.google.com/uc?export=download&id={file_id}"
 response = requests.get(model_url)
-
-# Save the model locally
 with open("bert_emotion_model.pth", "wb") as f:
     f.write(response.content)
 
