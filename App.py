@@ -1,5 +1,6 @@
 import os
 import torch
+import requests
 import streamlit as st
 from transformers import BertTokenizer, BertForSequenceClassification, GPT2LMHeadModel, GPT2Tokenizer
 
