@@ -3,10 +3,21 @@ import torch
 import streamlit as st
 from transformers import BertTokenizer, BertForSequenceClassification, GPT2LMHeadModel, GPT2Tokenizer
 
+
+# Download the model file from SharePoint
+model_url = "https://myharrisburgu.sharepoint.com/:u:/s/CISC520/Ede5T-WYCsZLoL0D_EGdnAwBv3_MooU8C_3DNO0C0VdjEg?e=vtCK3B"
+response = requests.get(model_url)
+
+# Save the model locally
+with open("bert_emotion_model.pth", "wb") as f:
+    f.write(response.content)
+
 # Load the saved BERT model
 model_name = 'bert-base-uncased'
 tokenizer = BertTokenizer.from_pretrained(model_name)
 model = BertForSequenceClassification.from_pretrained(model_name, num_labels=28)
+
+# Load the model state from the downloaded file
 model.load_state_dict(torch.load("bert_emotion_model.pth", map_location=torch.device('cpu')))
 
 # Set the device (GPU or CPU)
